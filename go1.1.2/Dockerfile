@@ -22,7 +22,6 @@ run	cd go/src && ./all.bash
 run	mkdir /gopath
 run	mkdir /gopath/{src,pkg,bin}
 
-run	echo "GOROOT=/go\
-run	GOPATH=/gopath\
-PATH=$PATH:$GOROOT\bin:$GOPATH/bin\
-" >> /etc/environment
+env	GOROOT	/go
+env	GOPATH	/gopath
+env	PATH	$PATH:/go/bin:/gopath/bin
